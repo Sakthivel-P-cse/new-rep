@@ -1,0 +1,10 @@
+<% layout('layout', { title: 'Shared certificate', user: null }) %>
+
+<article>
+  <h2><%= cert.title %></h2>
+  <p><%= cert.description || '' %></p>
+  <p><strong>Issued by:</strong> <%= cert.issued_by || '-' %></p>
+  <p><strong>Issued at:</strong> <%= cert.issued_at || '-' %></p>
+  <a href="/certificates/<%= cert.id %>/download">Download</a>
+</article>
+
