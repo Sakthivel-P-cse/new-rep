@@ -1,0 +1,51 @@
+.datetime-display {
+  display: flex;
+  align-items: center;
+  background-color: var(--gray-100);
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  margin-right: 1rem;
+}
+
+.clock-icon {
+  color: var(--primary-color);
+  margin-right: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.datetime-text {
+  font-size: 0.85rem;
+  color: var(--gray-700);
+  font-weight: 500;
+}
+
+.user-profile {
+  display: flex;
+  align-items: center;
+}
+
+.user-profile a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.user-name {
+  margin-left: 0.5rem;
+  color: var(--gray-800);
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+/* Media query adjustment for smaller screens */
+@media screen and (max-width: 992px) {
+  .datetime-display {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .user-name {
+    display: none;
+  }
+}

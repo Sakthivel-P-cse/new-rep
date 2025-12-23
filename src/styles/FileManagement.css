@@ -1,0 +1,108 @@
+.file-management-widget {
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.06);
+  border: 1px solid #e9ecef;
+  overflow: hidden;
+}
+
+.file-management-content {
+  padding-top: 0;
+}
+
+.file-stats-container {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.file-stats-total {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-right: 1rem;
+}
+
+.file-stats-total h4 {
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+  color: #495057;
+}
+
+.total-files {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: #4361ee;
+  margin-bottom: 0.5rem;
+}
+
+.last-updated {
+  font-size: 0.75rem;
+  color: #6c757d;
+}
+
+.file-chart-container {
+  width: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.file-chart {
+  width: 120px;
+  height: 120px;
+  display: flex;
+  border-radius: 50%;
+  overflow: hidden;
+  background: linear-gradient(90deg, #e9ecef, #f8f9fa);
+}
+
+.chart-segment {
+  height: 100%;
+  transition: width 0.4s ease;
+}
+
+.chart-segment.documents { background-color: #4cc9f0; }
+.chart-segment.pdfs { background-color: #4361ee; }
+.chart-segment.code { background-color: #3a0ca3; }
+.chart-segment.images { background-color: #7209b7; }
+.chart-segment.other { background-color: #f72585; }
+
+.file-types-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 0 1.5rem 1rem 1.5rem;
+}
+
+.file-type-item {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  background-color: #f8f9fa;
+}
+
+.file-type-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 0.75rem;
+  color: white;
+}
+
+.file-type-icon.documents { background-color: #4cc9f0; }
+.file-type-icon.pdfs { background-color: #4361ee; }
+.file-type-icon.code { background-color: #3a0ca3; }
+.file-type-icon.images { background-color: #7209b7; }
+.file-type-icon.other { background-color: #f72585; }
+
+.file-type-details { flex: 1; }
+.file-type-name { font-size: 0.95rem; font-weight: 600; color: #343a40; }
+.file-type-count { font-size: 0.85rem; color: #6c757d; }
+.file-type-percentage { font-weight: 700; color: #343a40; }
