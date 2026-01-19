@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= title || 'DigiLocker' %></title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css" />
+    <style>
+      header { margin-bottom: 1rem; }
+      .container { max-width: 960px; }
+    </style>
+  </head>
+  <body>
+    <header class="container">
+      <nav>
+        <ul>
+          <li><strong>DigiLocker</strong></li>
+        </ul>
+        <ul>
+          <% if (typeof user !== 'undefined' && user) { %>
+            <li><a href="/dashboard">Dashboard</a></li>
+            <li>
+              <form method="post" action="/logout">
+                <button type="submit" class="contrast">Logout</button>
+              </form>
+            </li>
+          <% } else { %>
+            <li><a href="/login">Login</a></li>
+            <li><a href="/register">Register</a></li>
+          <% } %>
+        </ul>
+      </nav>
+    </header>
+    <main class="container">
+      <%- body %>
+    </main>
+  </body>
+  </html>
+

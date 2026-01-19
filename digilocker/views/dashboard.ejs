@@ -1,0 +1,89 @@
+<% var title = 'Dashboard'; %>
+
+<article>
+  <h2>Welcome, <%= user.name %></h2>
+
+  <details>
+    <summary>Upload certificate</summary>
+    <form method="post" action="/certificates/upload" enctype="multipart/form-data">
+      <label>
+        Title
+        <input type="text" name="title" required />
+      </label>
+      <label>
+        Description
+        <input type="text" name="description" />
+      </label>
+      <label>
+        Issued by
+        <input type="text" name="issued_by" />
+      </label>
+      <label>
+        Issued at
+        <input type="date" name="issued_at" />
+      </label>
+      <label>
+        File (PDF/Image, max 10MB)
+        <input type="file" name="file" accept=".pdf,image/*" required />
+      </label>
+      <button type="submit">Upload</button>
+    </form>
+  </details>
+
+  <h3>Your certificates</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Issued by</th>
+        <th>Issued at</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% for (const c of certs) { %>
+        <tr>
+          <td><%= c.title %></td>
+          <td><%= c.issued_by || '-' %></td>
+          <td><%= c.issued_at || '-' %></td>
+          <td>
+            <a href="/certificates/<%= c.id %>/download">Download</a>
+          </td>
+        </tr>
+      <% } %>
+    </tbody>
+  </table>
+
+  <% if (user.role === 'org' || user.role === 'admin') { %>
+    <hr />
+    <h3>Upload certificate for student</h3>
+    <form method="post" action="/certificates/upload-for-student" enctype="multipart/form-data">
+      <label>
+        Student Email
+        <input type="email" name="student_email" required />
+      </label>
+      <label>
+        Title
+        <input type="text" name="title" required />
+      </label>
+      <label>
+        Description
+        <input type="text" name="description" />
+      </label>
+      <label>
+        Issued by
+        <input type="text" name="issued_by" />
+      </label>
+      <label>
+        Issued at
+        <input type="date" name="issued_at" />
+      </label>
+      <label>
+        File (PDF/Image, max 10MB)
+        <input type="file" name="file" accept=".pdf,image/*" required />
+      </label>
+      <button type="submit">Upload for student</button>
+    </form>
+  <% } %>
+</article>
+
