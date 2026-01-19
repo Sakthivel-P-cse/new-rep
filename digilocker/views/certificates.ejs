@@ -1,0 +1,17 @@
+<% layout('layout', { title: 'Certificates', user }) %>
+
+<article>
+  <h2>Certificates</h2>
+  <ul>
+    <% for (const c of certificates) { %>
+      <li>
+        <strong><%= c.title %></strong>
+        <small><%= c.issued_by || '-' %> • <%= c.issued_at || '-' %></small>
+        <div>
+          <a href="/certificates/<%= c.id %>/download">Download</a>
+        </div>
+      </li>
+    <% } %>
+  </ul>
+</article>
+
